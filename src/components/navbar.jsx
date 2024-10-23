@@ -19,9 +19,7 @@ const NavBar = () => {
   return (
     <div className="bg-[#170550] text-white">
       <div className="flex justify-between items-center py-[15px] mx-24">
-        <button className="text-3xl ms-[-40px] md:ms-0 font-bold">
-          YemScript
-        </button>
+        <div className="text-3xl ms-[-40px] md:ms-0 font-bold">YemScript</div>
         <ul className=" hidden md:flex gap-6 text-xl ">
           {navItems.map((navItem) => (
             <li key={navItem.id}>

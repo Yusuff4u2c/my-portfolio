@@ -71,7 +71,7 @@ const Contact = () => {
             {...register("message")}
           ></textarea>
           <button
-            className="rounded-3xl px-8 py-2 mx-auto bg-[#F86F03] text-white font-bold"
+            className="rounded-3xl px-8 py-2 mx-auto bg-[rgb(240,3,248)] text-white font-bold"
             type="submit"
           >
             Send
