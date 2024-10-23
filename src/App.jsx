@@ -10,8 +10,8 @@ import Contact from "./components/contact";
 const Footer = () => {
   return (
     <div className="bg-[#31065A] text-white ">
-      <div className="max-w-6xl mx-auto py-12">
-        <h1>Copywrite & Copy : 2023 | All Right Reserved by RIEAD</h1>
+      <div className="max-w-[1240px] mx-auto py-12">
+        <h1>Copywrite & Copy : 2023 | All Right Reserved by YemScript</h1>
       </div>
     </div>
   );
@@ -19,7 +19,7 @@ const Footer = () => {
 
 function App() {
   return (
-    <>
+    <div>
       <NavBar />
       <Banner />
       <About />
@@ -28,7 +28,7 @@ function App() {
       <Portfolio />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 
