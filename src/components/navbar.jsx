@@ -44,9 +44,9 @@ const NavBar = () => {
               : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
           }
         >
-          <button className="text-3xl font-bold bg-[#170550] w-full py-4">
+          <div className="text-3xl font-bold bg-[#170550] w-full py-4">
             YemScript
-          </button>
+          </div>
 
           {navItems.map((navItem) => (
             <li className="ps-12 " key={navItem.id}>
