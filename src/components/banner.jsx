@@ -30,7 +30,7 @@ const Banner = () => {
             <FaGithub />
             <FaInstagram />
           </div>
-          <Button className="bg-[rgb(248,3,150)] mt-4 font-bold text-lg text-white">
+          <Button className="bg-[#F86F03] mt-4 font-bold text-lg text-gray-900">
             Download CV
           </Button>
         </div>
