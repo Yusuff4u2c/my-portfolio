@@ -1,14 +1,11 @@
-// import Logo from "../assets/images/logo.jpg";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 
-// import Button from "./button";
-
 const NavBar = () => {
   const [navIsOpen, setIsNavOpen] = useState(false);
-  function handleNavToggle() {
-    setIsNavOpen(!navIsOpen);
-  }
+
+  const handleNavToggle = () => setIsNavOpen(!navIsOpen);
+
   const navItems = [
     { id: 1, text: "About Me" },
     { id: 2, text: "Services" },
@@ -16,43 +13,59 @@ const NavBar = () => {
     { id: 4, text: "Portfolio" },
     { id: 5, text: "Contacts" },
   ];
+
   return (
-    <div className="bg-[#170550] text-white">
-      <div className="flex justify-between items-center py-[15px] mx-24">
-        <div className="text-3xl ms-[-40px] md:ms-0 font-bold">YemScript</div>
-        <ul className=" hidden md:flex gap-6 text-xl ">
+    <div className="bg-[#170550] sticky top-0 text-white">
+      <div className="flex justify-between items-center py-4 px-6 md:px-24">
+        {/* Logo */}
+        <div className="text-3xl font-bold">YemScript</div>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex gap-6 text-xl">
           {navItems.map((navItem) => (
             <li key={navItem.id}>
-              <button className="bg-transparent hover:bg-orange-800 p-2 rounded">
+              <a
+                href={`#${navItem.text.toLowerCase().replace(/\s+/g, "-")}`}
+                className="bg-transparent hover:bg-orange-800 px-4 py-2 rounded"
+              >
                 {navItem.text}
-              </button>
+              </a>
             </li>
           ))}
         </ul>
 
-        <div onClick={handleNavToggle} className="block md:hidden">
-          {navIsOpen ? (
-            <AiOutlineClose size={20} />
-          ) : (
-            <AiOutlineMenu size={20} />
-          )}
-        </div>
-        <ul
-          className={
-            navIsOpen
-              ? "fixed md:hidden left-0 top-0 w-[48%] h-full  border-r border-r-gray-900 bg-[#31065A] ease-in-out duration-500"
-              : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+        {/* Mobile Nav Toggle */}
+        <div
+          onClick={handleNavToggle}
+          className="block md:hidden cursor-pointer"
+          aria-label={
+            navIsOpen ? "Close navigation menu" : "Open navigation menu"
           }
         >
-          <div className="text-3xl font-bold bg-[#170550] w-full py-4">
+          {navIsOpen ? (
+            <AiOutlineClose size={24} />
+          ) : (
+            <AiOutlineMenu size={24} />
+          )}
+        </div>
+
+        {/* Mobile Nav */}
+        <ul
+          className={`fixed md:hidden left-0 top-0 bg-[#31065A] border-r border-gray-900 transition-transform duration-500 ${
+            navIsOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="text-3xl font-bold bg-[#170550] w-full py-4 px-6">
             YemScript
           </div>
-
           {navItems.map((navItem) => (
-            <li className="ps-12 " key={navItem.id}>
-              <button className="bg-transparent hover:bg-orange-800 w-full text-left p-2 rounded">
+            <li key={navItem.id} className="px-6 py-2">
+              <a
+                href={`#${navItem.text.toLowerCase().replace(/\s+/g, "-")}`}
+                className="block bg-transparent hover:bg-orange-800 w-full text-left px-4 py-2 rounded"
+              >
                 {navItem.text}
-              </button>
+              </a>
             </li>
           ))}
         </ul>

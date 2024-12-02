@@ -3,7 +3,7 @@ import Button from "./button";
 
 const About = () => {
   return (
-    <div className="bg-[#170550] text-white " id="about">
+    <div className="bg-[#170550] text-white " id="about-me">
       <div className="max-w-6xl mx-auto py-10 flex flex-col">
         <h1 className="px-4 border-b border-white w-fit mx-auto pt-4 text-3xl md:text-4xl font-semibold">
           About <span className="text-[#F86F03]">Me</span>{" "}
