@@ -13,7 +13,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#170550] text-white" id="contact">
+    <div className="bg-[#170550] text-white" id="contacts">
       <div className="flex flex-col gap-8 md:flex-row px-12 md:justify-between py-20 items-center">
         <div className="flex flex-col gap-4 font-semibold md:text-xl">
           <h1 className="px-4 border-b border-white w-fit mx-auto py-4 text-[40px] font-semibold">
