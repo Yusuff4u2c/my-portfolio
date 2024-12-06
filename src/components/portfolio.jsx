@@ -1,22 +1,58 @@
-import ImgOne from "../assets/images/rectangle-1.png";
-import ImgTwo from "../assets/images/rectangle-2.png";
-import ImgThree from "../assets/images/rectangle-3.png";
-import ImgFour from "../assets/images/rectangle-4.png";
-import ImgFive from "../assets/images/rectangle-5.png";
-import ImgSix from "../assets/images/rectangle-6.png";
-import ImgSeven from "../assets/images/rectangle-7.png";
-import ImgEight from "../assets/images/rectangle-8.png";
+import Hushhive from "../assets/images/hushhive.png";
+import Store from "../assets/images/store.png";
+import Form from "../assets/images/form.png";
+
+import Timer from "../assets/images/timer.png";
+import Calc from "../assets/images/calc.png";
+import WorkOut from "../assets/images/workout.png";
+import InvestCalc from "../assets/images/investment-calc.png";
+import Task from "../assets/images/task-manager.png";
+// import ImgEight from "../assets/images/rectangle-8.png";
 
 const Portfolio = () => {
-  const images = [
-    ImgOne,
-    ImgTwo,
-    ImgThree,
-    ImgFour,
-    ImgFive,
-    ImgSix,
-    ImgSeven,
-    ImgEight,
+  const projects = [
+    { img: Hushhive, title: "Hushhive", url: "https://hushhive.yemscript.com" },
+
+    {
+      img: Store,
+      title: "Simple Ecommerce  ",
+      url: "https://yemstore.yemscript.com",
+    },
+    {
+      img: Form,
+      title: "Multi Step Form",
+      url: "https://complex-form.yemscript.com",
+    },
+    {
+      img: Timer,
+      title: "Countdown Timer",
+      url: "https://timer-game.yemscript.com",
+    },
+    {
+      img: Calc,
+      title: "React Basic Calculator",
+      url: "https://react-calculator.yemscript.com",
+    },
+    {
+      img: WorkOut,
+      title: "Workout Tracker",
+      url: "https://yemfit.yemscript.com",
+    },
+    {
+      img: InvestCalc,
+      title: "Investment Calculator",
+      url: "https://investment-calc.yemscript.com",
+    },
+    // {
+    //   img: ImgEight,
+    //   title: "Project 8",
+    //   url: "#",
+    // },
+    {
+      img: Task,
+      title: "Task Manager",
+      url: "https://task-manager.yemscript.com",
+    },
   ];
 
   return (
@@ -26,12 +62,19 @@ const Portfolio = () => {
           Portfolio
         </h1>
         <div className="flex flex-wrap justify-center gap-4 my-10">
-          {images.map((image, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
-              className="w-[calc(50%-8px)] md:w-[calc(25%-8px)]" // 2 images per row on mobile, 4 on larger screens
+              className="w-[calc(50%-8px)] md:w-[calc(25%-8px)] mt-8 flex flex-col justify-center items-center" // 2 images per row on mobile, 4 on larger screens
             >
-              <img src={image} alt={`portfolio-${index}`} className="w-full" />
+              <h1 className="">{project.title}</h1>
+              <a href={project.url}>
+                <img
+                  src={project.img}
+                  alt={`portfolio-${index}`}
+                  className="w-full h-[200px] object-fit rounded-lg"
+                />
+              </a>
             </div>
           ))}
         </div>
